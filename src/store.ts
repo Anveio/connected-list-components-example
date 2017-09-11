@@ -1,4 +1,4 @@
-import { createStore, compose } from 'redux';
+import { createStore, combineReducers, compose } from 'redux';
 
 import animals from './reducers/animals';
 
@@ -8,6 +8,6 @@ const devtools: any = window['__REDUX_DEVTOOLS_EXTENSION__']
   ? window['__REDUX_DEVTOOLS_EXTENSION__']()
   : (f: any) => f;
 
-const store = createStore<any>(animals, compose(devtools));
+const store = createStore<any>(combineReducers({ animals }), compose(devtools));
 
 export default store;

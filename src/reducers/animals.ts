@@ -1,10 +1,10 @@
 import { ADOPT_ANIMAL } from '../constants';
-import { AdoptionAction } from '../actions/adopt';
+import { AdoptAction } from '../actions/adopt';
 import sampleData from '../sampleData';
 
 const initial = sampleData;
 
-export default (state = initial, action: AdoptionAction) => {
+export default (state = initial, action: AdoptAction) => {
   switch (action.type) {
     case ADOPT_ANIMAL:
       return state.update(action.animalId, (animal) => ({

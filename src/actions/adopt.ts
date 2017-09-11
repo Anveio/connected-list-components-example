@@ -1,11 +1,11 @@
 import { ADOPT_ANIMAL } from '../constants';
 
-export interface AdoptionAction {
+export interface AdoptAction {
   type: ADOPT_ANIMAL;
   animalId: string;
 }
 
-export const adoptAnimal = (animalId: string): AdoptionAction => ({
+export const adoptAnimal = (animalId: string): AdoptAction => ({
   type: ADOPT_ANIMAL,
   animalId
 });
