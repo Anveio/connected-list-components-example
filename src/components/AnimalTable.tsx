@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { RootState, Animal } from '../types';
+import { RootState } from '../types';
 import { List } from 'immutable';
+import { animalIdsSelector } from '../selectors';
 
 import AnimalListing from './AnimalListing';
 
@@ -10,11 +11,10 @@ interface Props {
 }
 
 const mapState = (state: RootState): Props => ({
-  animalIds: state.animals.map((animal: Animal) => animal.id).toList()
+  animalIds: animalIdsSelector(state)
 });
 
-class AnimalTable extends React.Component<Props, never> {
-  
+class AnimalTable extends React.PureComponent<Props, never> {
   public render() {
     return (
       <main>
