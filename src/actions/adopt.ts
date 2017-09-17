@@ -1,11 +1,12 @@
-import { ADOPT_ANIMAL } from '../constants';
+export const TOGGLE_ADOPTION = 'TOGGLE_ADOPTION';
+export type TOGGLE_ADOPTION = typeof TOGGLE_ADOPTION;
 
 export interface AdoptAction {
-  type: ADOPT_ANIMAL;
+  type: TOGGLE_ADOPTION;
   animalId: string;
 }
 
-export const adoptAnimal = (animalId: string): AdoptAction => ({
-  type: ADOPT_ANIMAL,
+export const toggleAdoption = (animalId: string): AdoptAction => ({
+  type: TOGGLE_ADOPTION,
   animalId
 });

@@ -1,5 +1,5 @@
 import * as v4 from 'uuid/v4';
-import { Animal, AnimalMap } from './types';
+import { Animal } from './types';
 import { Map } from 'immutable';
 
 const sampleData: Animal[] = [
@@ -35,10 +35,9 @@ const sampleData: Animal[] = [
   }
 ];
 
-const createAnimalMap = (input: Animal[]): AnimalMap =>
+const createAnimalMap = (input: Animal[]): Map<string, Animal> =>
   input.reduce(
-    (map: AnimalMap, animal: Animal, index: number) =>
-      map.set(animal.id, animal),
+    (map, animal: Animal, index: number) => map.set(animal.id, animal),
     Map<string, Animal>()
   );
 

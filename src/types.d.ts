@@ -1,7 +1,7 @@
 import { Map } from 'immutable';
 
 export interface RootState {
-  readonly animals: AnimalMap;
+  readonly animals: Map<string, Animal>;
 }
 
 export interface Animal {
@@ -10,5 +10,3 @@ export interface Animal {
   readonly adopted: boolean;
   readonly type: 'Cat' | 'Dog';
 }
-
-export type AnimalMap = Map<string, Animal>;
