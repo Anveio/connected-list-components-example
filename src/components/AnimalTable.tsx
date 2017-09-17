@@ -15,6 +15,10 @@ const mapState = (state: RootState): Props => ({
 });
 
 class AnimalTable extends React.PureComponent<Props, never> {
+  shouldComponentUpdate(nextProps: Props) {
+    return !nextProps.animalIds.equals(this.props.animalIds);
+  }
+
   public render() {
     return (
       <main>
